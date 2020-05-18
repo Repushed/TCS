@@ -1,1 +1,3 @@
 # TCS
+
+python run.py 
