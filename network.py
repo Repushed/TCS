@@ -64,21 +64,12 @@ class Network(object):
             cost = self.scheduling_protocol.set_mode(self, rounds)
             computation_time = time.time() - start_time
 
-            # output the results at a time slot
+            # the results at a time slot
             num_of_active_nodes = len(self.get_active_nodes())
             nodes_idx = [n.id for n in self.get_active_nodes()]
             nodes = self.get_alive_nodes()
             nodes_energy = [n.energy for n in self.get_active_nodes()]
             time_list.append(computation_time)
-
-            logging.info('round ' + str(rounds) + ' num. of active sensors :'
-                         + str(num_of_active_nodes))
-            logging.info('Active nodes\' ID :' + str(nodes_idx))
-            logging.info('Active nodes\' remaining energy after sensing :' + str(nodes_energy))
-            logging.info('number of alive nodes :' + str(len(nodes)))
-            #logging.info('sum remaining energy : ' + str(sum(self.get_remaining_energy())))
-            logging.info('compution time :' + str(computation_time))
-            logging.info('cost :' + str(cost))
 
             # validation step
             cover = self.cover_validation() # validate the sensing coverage
@@ -93,6 +84,16 @@ class Network(object):
                     if rounds < first_node_die_round:  # round that first node dies
                         self.result.append(rounds)
                         first_node_die_round = rounds
+                        
+            # print the results
+            logging.info('round ' + str(rounds) + ' num. of active sensors :'
+                         + str(num_of_active_nodes))
+            logging.info('Active nodes\' ID :' + str(nodes_idx))
+            logging.info('Active nodes\' remaining energy after sensing :' + str(nodes_energy))
+            logging.info('number of alive nodes :' + str(len(nodes)))
+            #logging.info('sum remaining energy : ' + str(sum(self.get_remaining_energy())))
+            logging.info('compution time :' + str(computation_time))
+            logging.info('cost :' + str(cost))
 
             #
             if cover:
