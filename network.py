@@ -218,7 +218,7 @@ class Network(object):
             target_node_list.append(node_list)
             prob.append(sense_prob)
 
-        logging.info('sensing prob. for each target: ' + str(prob))
+        # logging.info('sensing prob. for each target: ' + str(prob))
         return result
 
     def conn_validation(self):# 변경
