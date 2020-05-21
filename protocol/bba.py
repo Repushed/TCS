@@ -249,3 +249,8 @@ class N_BBA(Scheduling):
                 stack += set(adj) - set(visited)
 
         return visited
+
+
+    def get_name(self):
+        return '%s_%d_%d' % (self.name, self.num_bats,self.num_iterations)
+
