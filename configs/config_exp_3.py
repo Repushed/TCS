@@ -9,9 +9,9 @@ CREATE_GRAPH = True
 
 # Experiment 3 : Comparison against Binary Bat Algorithms
 PROTOCOLS = [
-    ['PROPOSED',            ['num_bats', 30, ], ['num_iterations', 1000]], # Proposed Method with greedy initialization
-    ['PROPOSED_rand_init', ['num_bats', 30, ], ['num_iterations', 1000]], # Proposed Method with random initialization
-    ['N_BBA',None],                                                             # Normal Binary Bat Algorithm
+    ['PROPOSED',            ['num_bats', 30, ], ['num_iterations', 1000]], 	# Proposed Method with greedy initialization
+    ['PROPOSED_rand_init', ['num_bats', 30, ], ['num_iterations', 1000]], 	# Proposed Method with random initialization
+    ['N_BBA', ['num_bats', 20, ], ['num_iterations', 5000]],			# Normal Binary Bat Algorithm
 
 ]
 
