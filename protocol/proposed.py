@@ -13,7 +13,7 @@ import time
 
 
 # Scheduling Using Binary Bat Algorithm for Connected Coverage (based on probabilistic sensing model) in WSN
-# if not considering connectivity, you have to use bba.py
+# if not considering connectivity, you have to use proposed_sc.py
 
 class PROPOSED(Scheduling):
     name = 'PROPOSED'
