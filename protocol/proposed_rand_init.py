@@ -249,7 +249,7 @@ class PROPOSED_RAND_INIT(Scheduling):
         active_nodes = [idx for idx, value in enumerate(solution)  # remove not included nodes in solution
                         if value != 0 and idx not in self.dead_nodes and self.network.get_node(
                 idx).energy >= cf.COMMUNICATION_ENERGY]
-
+        active_nodes.append(-1) # add a sink node 
         visited = self.DFS(self.network_graph, active_nodes[0], active_nodes)
         if len(visited) == len(active_nodes):
             return True
