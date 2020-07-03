@@ -65,9 +65,11 @@ class PSCA(Scheduling):
             relay_node_set = list(self.add_relay_node(active_node_set))
         except:
             relay_node_set = active_node_set
-
-        active_node_set.remove(-1)
-        relay_node_set.remove(-1)
+        try:
+            active_node_set.remove(-1)
+            relay_node_set.remove(-1)
+        except:
+            pass
         print(active_node_set)
         print(relay_node_set)
 
